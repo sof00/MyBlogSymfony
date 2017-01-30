@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CABlogBundle:Blog:index{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Blog:index page</h1>
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+    <a class="link" href="{{ path('logout') }}">Logout</a>
+{% else %}
+    <a class="link" href="{{ path('login') }}">Login</a>
+{% endif %}
+
+{% endblock %}
